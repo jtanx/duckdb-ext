@@ -1,0 +1,21 @@
+repos:
+- name: duckdb/core-extensions
+  url: https://extensions.duckdb.org
+  prefix: ''
+  extensions:
+  - name: autocomplete
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: avro
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: delta
+    author: duckdb
+    license: MIT
+    builds: []
+- name: duckdb/community-extensions
+  url: https://community-extensions.duckdb.org
+  prefix: community-
+  extensions: []
