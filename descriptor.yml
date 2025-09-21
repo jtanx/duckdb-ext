@@ -8,6 +8,12 @@ repos:
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: '"54fb912b2819e0cd1148a9209fef211b"'
+      sha256: 34b115fdab290294496ff446c757db65951aa546609e7ebc540417b402a81e74
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.0
       etag: '"72d95f402bd5f3a46500b4e6339469f8"'
@@ -32,6 +38,12 @@ repos:
       sha256: fb376eaf4cd8f292c17545fc0d9341a0458c358a12b9f320afa6979c363e5249
       skip: false
       rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"f4f7b688dad4fba586a8ce4f769ed7f8"'
+      sha256: 92468ce0b737e3e2e5933293092df85543d432a07cf471da6447baa4030e3370
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"a6a9ca5581b3079a32598318b0a4c7d2"'
@@ -54,6 +66,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"9f1cbfd1b6be66b0d44db84fdee4a285"'
       sha256: 4a646c42e9f079a377a37014abdcb8d2ec763bc17b7e8b7fda4daa9d92ca28b1
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"694d6418ab2d82237da3dce07c852344"'
+      sha256: 98bb4e9151a792507ddbd3e2407faad2098da77ef46a069bbba23ca59339192e
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -200,29 +218,23 @@ repos:
       sha256: dd651e775585e15ab242bf0e3a3172f22be1130553d711dbec62ef90f9063798
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
   - name: avro
     alias: null
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: null
+      sha256: null
+      skip: true
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"2f5380f8694cb6251b7b38c78e6e1426"'
+      sha256: 8c9021fcfe3e0b57eaf02ec6abf59852bd3bf0c835d2a3feb97028d801b36aeb
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"6152055c6611d7d2e348cd9b4f46f92a"'
@@ -245,6 +257,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"d4b12e88c7daee9001deef9cf6c5e0cc"'
       sha256: db951cefb46ebbf898418cf0ac284ad6d6badf08a46fe11ccf922c7c04a90457
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"5fd9225bd21b595e76d16386f01a36ec"'
+      sha256: e2d044220eec3878582bb089b89d48d2de0878b2bf52c39005e977168d242927
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -391,23 +409,17 @@ repos:
       sha256: 1fbf5c4448b1870f2646f1d12b603e5b5a74149f9e4288c151e5b0a056b96a19
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
   - name: aws
     alias: null
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: '"879aa9edb43247b7fe06505db4a93b7f"'
+      sha256: 3149adb13943be37ebf46cbf08ad7aa911879f7abd1c91c00d8785d66a21dd6c
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.0
       etag: '"31bb7e9c7f03c6ee713672677dbb6e7b"'
@@ -432,6 +444,12 @@ repos:
       sha256: 4405cce38bad35df854f93ca50111cad04160980bcc23b677289010860ff8dba
       skip: false
       rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"1e0113dbc6d0e526a139f608d35f88dd"'
+      sha256: 6c02c14a96554507ffd3ecb0942895369789575bbc857d65defd39f7faac2a6f
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"faec8d44addfd8f89b31fba5f8059947"'
@@ -454,6 +472,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"14a73f4a8a830e40c87344bce2df1957"'
       sha256: 9381dac98b50e2b4f1dab547bdeaba1706b889a5a3b56315f3b57dcdc4b82c5d
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"e8ab00eff72c22d9464b3487bc185577"'
+      sha256: 0fea8cc064115b4dc1186351b6416c260ed81497838216576e1fb3fca73e19b4
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -600,29 +624,17 @@ repos:
       sha256: d082ff414f5b48ea94cb0e9d08443a4eae4da72b744a28a2ec6045dcf9123e0d
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
   - name: azure
     alias: null
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: '"5b8311225539adcd4474a4f23f35e95f"'
+      sha256: 5cc0db7961fa3ea2b2724179931277c0d16680d236bf646dcdf3a39a0c4b801e
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.0
       etag: '"628ce6d46103af01f76348ac95316534"'
@@ -647,6 +659,12 @@ repos:
       sha256: e9450270eeccefc0a2ea3a9b79a36b3b100191ff3ba464ce0c71a78018f4498a
       skip: false
       rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"cd950e765c45cf667337e055a26791d1"'
+      sha256: 05c0e3938a36c2a75e546bd0b4a8308efd901410621b5ac397be71112530554c
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"5e299486328195abd2e9815cf7ce9022"'
@@ -669,6 +687,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"f30f73f5ac9b6feba071b73eb2c14d25"'
       sha256: 79f212c0c20ca2a073970674cd78d94b4b241c2283214bffa0bfff044e2dee0e
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"ac00c52284f6a6b27d3679ca474ad2cd"'
+      sha256: 3dae08a27ea58e8a7774b57664f0b71a68a01459ce3af65d172b9e12b38c6ebe
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -815,29 +839,17 @@ repos:
       sha256: a4ac1420974290f6bffc688cfcf5bb596eac7f439261566e134208283934f07f
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
   - name: delta
     alias: null
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: '"460815fc9a2d30cb448426f322dbafb6"'
+      sha256: c811fe328932dfba49c0abb4e92f69bf54f7a683b566ea431cd8ea4154fd69cf
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.0
       etag: '"6f960def7068151dc8b88c1bc04cefa2"'
@@ -862,6 +874,12 @@ repos:
       sha256: 011fe39a74da5d653cfea5117c337f04759658a47e1c0dbe3f1079553376b343
       skip: false
       rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"c673746c3b2dac5461748fe4a31dc97b"'
+      sha256: 97f536a0820655ca6bd6de923282b0045171b194a3724811e187adcaec1f32bd
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"f473addbff8366d41eb8e4acd88d8683"'
@@ -884,6 +902,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"c39ab71b1b9b72850a730cd43d305dbf"'
       sha256: 381cab50584088ddeaf02ac39546fa5f82baa514ce025b5e08df7d129e8c4680
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"8a09ad5946c3b2b63f7e2d452dbba800"'
+      sha256: 1f44d210ebf051f113b66ab88ae2cbf99dc348d67d7785a6d783913fca3fa051
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -1030,24 +1054,6 @@ repos:
       sha256: 7e95a2891bf4cefc2c5dbc8a09501bb460b36b3f541c10722b321404c59f975c
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
   - name: ducklake
     alias: null
     author: duckdb
@@ -1303,6 +1309,12 @@ repos:
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: '"89416af31df43af9c98f78307fedaf46"'
+      sha256: 1a414d3f3bd69a6ac298b03bdc25ec2b3a6795c57e4875e85929345bf754cae9
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.0
       etag: '"a94213473e26267f186afa6e0827e3f1"'
@@ -1327,6 +1339,12 @@ repos:
       sha256: 733e0c96ea47b531b7d117119959cbf90725829b99b9556de8e83e29d38f7b28
       skip: false
       rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"8a806ba4c51bbb6935a0bb1a6333e567"'
+      sha256: 8e425d05fe7e0fbbaf68607f7ad28086deda5709e9e4bede6e36524d4a24d839
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"acbc1f9f905b1706379aef31b8810409"'
@@ -1349,6 +1367,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"c5462eceaf3a9a965e11f9b467502c1e"'
       sha256: 3acb0d60a0e6a03c6ea0d1493382f1449f0ba0fdb0f1d9218bb2143442a25786
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"7d5df1395b75d911af5247575f22dc37"'
+      sha256: 1f315563bfb0febceb67703d901cb3e2a0a60234a7288fb153e87a6a915bbbeb
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -1495,29 +1519,17 @@ repos:
       sha256: 5a684879f0e7fba9012cd2dff9fde5187b03778538990a9706779594dc778b7c
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
   - name: fts
     alias: null
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: null
+      sha256: null
+      skip: true
+      rebuild_with: 20250921.post0
     - platform: linux_arm64
       duckdb_version: 1.2.0
       etag: '"f0bfb819e166f68017f3c55bbaf53aa9"'
@@ -1542,6 +1554,12 @@ repos:
       sha256: 8776777dd2eb1bf5af7b1c79581849152ceebf22ad6a5f19ef24edf98245bd0d
       skip: false
       rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"7df49d9c8c733113bfc6f1157ab2631e"'
+      sha256: fb19d6f8acad461312dab37d7e1800015c1d352b60c539a781b2e7c8957d89a9
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"1c97cbe49ddecd3238da99f44d86ef0f"'
@@ -1564,6 +1582,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"cf9d3dc2fef64a8a06a3633196107d81"'
       sha256: a3846fcbf83dec602c3402f20b81f951c040325a8d63c283a9659a6b48a9d7f6
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"0cdc4419396a36fee0f1c22b2d537311"'
+      sha256: 7a3b45932403c3a23d0d75c29821a2e822d3e500f9179914360dcc33a6382dd6
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -1710,29 +1734,17 @@ repos:
       sha256: 4e4d7579433b31105293e736fb159b353ed6800981bcc137f135ea49e4238b44
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
   - name: httpfs
     alias: null
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: '"0ac47e783e03cda375b3c65710659fd2"'
+      sha256: b57f19a35e71ae99552562edb7059f3057c9c0716628386142c65755b100d446
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.0
       etag: '"a6dc81c4b37b9787c99ef1052cc347e6"'
@@ -1757,6 +1769,12 @@ repos:
       sha256: 94f21870f817dd23caad60d77dbc689e2ae8ccb8dbf297a166750a00732913a2
       skip: false
       rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"ca8bdaa9a81fcbaf4a1835f85aaee38b"'
+      sha256: 26d6e19820a026cd4b9c7a49320396b5886a9448ce6f76b70e63bd409504eb31
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"3db3e3b7320b63fcc1d777d5d69e23b7"'
@@ -1779,6 +1797,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"c26dce4248db734f916fc5e61256705b"'
       sha256: 9407be71cd8537a74e1c979bff9e1e801e6571d4cf42e696c9e7ee94227b8510
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"34679912d88e815c1edfa112939e200b"'
+      sha256: 51f3ac4ddedf8d1e66ae9793cb747e6b851802ca4320e76c9a721d3fbd071794
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -1925,29 +1949,17 @@ repos:
       sha256: e95c9284c79d10872373e3ec2ebc3d42fe31f19b864d6b53fa513247fdf879c8
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
   - name: iceberg
     alias: null
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: '"40ad4f7b84f4cb99c9f12eb6cac938ae"'
+      sha256: 7a9086ba9f36291be6d032776159ad6b279e0a3a7a416edb5a93d72acb042d01
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.0
       etag: '"fc5377e0b3910a67b816813e3f7d1f2a"'
@@ -1972,6 +1984,12 @@ repos:
       sha256: 4086d1c4169ff4785877fdbd2a097f01a56534dc4c9c1fac6678028147852544
       skip: false
       rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"cbe68c9109026933faaa022987c2e2c7"'
+      sha256: bd8364a65d73d325e6511e3ca34497dbeec8d8d178f818740d8c77e93a8275cd
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"41c24e4da63cdf1125a682e56bc994e9"'
@@ -1994,6 +2012,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"f86bce4ecf3cad94429c477542a4ff7f"'
       sha256: 68a63d2c53e64cbd29c2a587a107ae85883f7ab9d4c5f228d84ff5299e3111e0
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"8f33f64351f3f6b8cb6131504c9dbf14"'
+      sha256: 08254a4d592228f0d29d877bc6d723461a42f54587355c729e9470d13b6fd335
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -2140,29 +2164,17 @@ repos:
       sha256: 201c66167702e6e20946462f61f9de8f02979eaaacdadd2de915bdb7a2b237d7
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
   - name: icu
     alias: null
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: '"7858d47c485b9686d68287957444a49b"'
+      sha256: bc1bfb225ea03753aa492bb10e63455206d1a52d822e065d23a5a535235c6bd8
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.0
       etag: '"94f3d59faf6fffec7923005bf100f95c"'
@@ -2187,6 +2199,12 @@ repos:
       sha256: 9859ccbbdf71e851c0d1d17c3ef0ec792d0051913fbf8bfb45166be9e7798939
       skip: false
       rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"66727ee5155fc3399030eca4e099696c"'
+      sha256: 298cddafae58317bd3dcdf493c98b4be1a35eb585065984a21f6ca7b783418b1
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"66e621fba9f67a1c2eb95810bca4af80"'
@@ -2209,6 +2227,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"1cb40a14181ffa2fadcddd7d14384be1"'
       sha256: fff224b646ebf715819547fa77d47a326031b624eb1d82d193509b79f91a4e0f
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"6eed93912495bd3a6820d95a4680e67c"'
+      sha256: b5d89fc1815dae29145562c1cc19624ed86c3e78d5902b4e258252c13dcd4afe
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -2355,29 +2379,17 @@ repos:
       sha256: cd5a7d43dbd3449e97037a7affb149f4d6114b32784ef2d2ba7037c6166bc795
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
   - name: inet
     alias: null
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: '"9419d569e1d77caf98d0f08ae499c567"'
+      sha256: 94f78e2dbd4055631a99433f549e37c471d8bf30a412e6a0997fc7e2ba02c3d9
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.0
       etag: '"5c39c9beb8276dc4c40f98c56131d543"'
@@ -2402,6 +2414,12 @@ repos:
       sha256: 86fc17963c9f6e0335265b15615d05aa3f6b8ccee50456553364a41a4ace2e14
       skip: false
       rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"128ae8ec43f3726d1feff3b6cabbb3d5"'
+      sha256: fa3e2a892ba07c218d40d3ef3d663cfbd04afc635540d42269f4a5e6dfd052bb
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"b33924e60f4d3153330192485aac2468"'
@@ -2424,6 +2442,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"e80b7bc44c40d64a49a35a24b7ffbb9c"'
       sha256: ffd25d164dea1bc9fbf45680db33dcb21f4311cf50a6138406d87ff811f78899
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"4dd84ca8642610e61afa6f89c0261c05"'
+      sha256: 9a2ad6a5a4d95c76b259a4d634ca1f52b385a6e26f6d1163bb721d4afa4823cc
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -2570,29 +2594,17 @@ repos:
       sha256: 00422af7be9b3068aacffef169d89444be2f8aa6d413ca67e95a1bb93c63853e
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
   - name: json
     alias: null
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: '"f2c00f0e0d97675ff921b5e77b442f09"'
+      sha256: f4add5a2a4256225e2f3b4d0adf8ceff11c83e38442144d6aa1b179077b6c372
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.0
       etag: '"52628a06dc5b807df016bd79e1902183"'
@@ -2617,6 +2629,12 @@ repos:
       sha256: 2ba11488f05cf5ddbdbb31c2d4c367c9c64550fc2fffa1dce24a341207c8f69b
       skip: false
       rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"54e63beef5fa0b4d1159819be2fc9468"'
+      sha256: dcf0c77ff230f6c5610fecc26b04081de5b03d5c635af3aeb635b796900b584b
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"2967103ef0033c3df4c5b5a553cd0ab7"'
@@ -2639,6 +2657,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"0feb2251d4943259a5310c1a047fa6b9"'
       sha256: 074faa66bc5f1a80bccf55585a6cc11d973091c1483267fbdec27c819dc83943
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"b45c074c7a77071dee38ff9b157d3c0c"'
+      sha256: aea514163b85702830c5c2c95fc000a57e0d2926f2c2b38f91f3553a4a769790
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -2785,29 +2809,17 @@ repos:
       sha256: cb931864ad85b9930cef5e63d550bdacc24380ce3fbacdedc333fa2737bf8bcb
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
   - name: mysql
     alias: mysql_scanner
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: '"ca01c94c08b9b4d3446036c187e13c3b"'
+      sha256: d226779b5caa9bef1456a2569bbbeb9221b4d6542b656990580e085fe824a750
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.0
       etag: '"c956aa73dfb322ad47ae106dc3ef436d"'
@@ -2832,6 +2844,12 @@ repos:
       sha256: 134cb002b0993419d4548494ba9f2db1060fe473fd779196381f8486b101ea7b
       skip: false
       rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"2a2eca5c3c740fe71a848e3f66dfd40b"'
+      sha256: fdf762581cd1bd2821dbf1d0a82fcd927fd3d40e6d12844d320e450f80957e04
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"fbd230c11ec456834a27608fb0aa7330"'
@@ -2854,6 +2872,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"7df4dc79977fdb23e380a131e3cc1945"'
       sha256: bd6536f3304263cf601399edd6be429a86dd1cd8f2d3e9dab4b028099c4ddde5
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"a9d4491da6c671e05e1595e3414798c1"'
+      sha256: 6d1a2ea1b27c491b31419f7fd33e8ece0de6881c1db3229dd3f58c77c4e22ad3
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -3000,29 +3024,17 @@ repos:
       sha256: 75c989d6f08362dbffe70f0ebe5d4ba04767c5763081db748956d13b6dfe211d
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
   - name: parquet
     alias: null
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: '"e90773f3f3d1d15cf22c7028a8c21905"'
+      sha256: 03d396204c4419abd864f572b8e3dfdca6008d7b4e5a97589344966504462591
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.0
       etag: '"fd56b38c799322ea59efa737a0f541c1"'
@@ -3047,6 +3059,12 @@ repos:
       sha256: 3a2f7c6c86b197b7d242beca1b879a14f061ca02dd4714bd628650d50bc73306
       skip: false
       rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"4e8351f5c7545ab0efd9b87d642f6204"'
+      sha256: c87278bf5894af4a48e518c95a9a61030680f1f135dd884f8b3280ed83ff04a5
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"6bc4c14b4275f8881eb83e4e62ec2aaa"'
@@ -3069,6 +3087,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"23ccc911e828ac45ee771882d49d156b"'
       sha256: 767800c0f39b0a19443d79062d3fa26f2c2043b1eb0201503847914c3b4ed143
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"780d45fc7e4840e6002e4dfc2704d740"'
+      sha256: 40dd85e5fe6cb0af5c4278a19702fc230d8c2c23919ebc4c9a351912749c5913
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -3215,29 +3239,17 @@ repos:
       sha256: 320894c9c35c658ea17694888467c0c12cd6253087a1620d83fb3e1ef58f3098
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
   - name: postgres
     alias: postgres_scanner
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: '"5d4ce79739222cbbe2da63a3fe4bfd4c"'
+      sha256: a26e908f9a3a185fda548d09dea7f99f4630eca504e0db09977e78fc715ca3e6
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.0
       etag: '"b9e5bb8809f8d40d03dd1a11dbc36455"'
@@ -3262,6 +3274,12 @@ repos:
       sha256: 2e7a34abd97a88e14e932dd06e6b98d09307513b219fda98b78b0f509f2b451d
       skip: false
       rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"baedeb85dd2dbccb87573e7fbd6d4af6"'
+      sha256: 9e4e0d35976cfaa411309a9d112c8e39343cd4ec4b97448dbf0693ac429d9dc4
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"4b9076dbe93ec932d8bfdf789c9c2de4"'
@@ -3284,6 +3302,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"2dbb838e230813c3572cf0fe7a05647b"'
       sha256: 41e7b1959e49eb0c47880007db46af2dd07d9a031b3735b4194f6082b6a460c9
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"970abc42d4720b1ed3d50b842ec999b3"'
+      sha256: a361cb3b6ad4c0e3da7701b5fe36e2564239052a449493ace6e59bfe9fdbc239
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -3430,29 +3454,17 @@ repos:
       sha256: dae4ab9d179f71fc7e088266970d4a3ca9af9b475745f12c634a428e659da424
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
   - name: spatial
     alias: null
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: '"1d96faf238985030906b816fe155116e"'
+      sha256: e6fd3c883a89d14d829a26193076a7270e8f931649adff338124ae1e63cff37f
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.0
       etag: '"a674d09893c2acac49ccd26f26026628"'
@@ -3477,6 +3489,12 @@ repos:
       sha256: b7fb5cd87f8d48ac8775625e053b773f6ce1991439a04c23edecac82c438a761
       skip: false
       rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"b2f41f3b8a7f6f3b84c807a45e42d5ec"'
+      sha256: 2afeede037e1271f3599ac2e767d813c390aaabd026de01c354ec535ecb40da2
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"98354a028e7887306b1637fb01d1fabf"'
@@ -3499,6 +3517,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"eebd9f56b65b20c45b39aa9ab6ae8c52"'
       sha256: 9317eb7b86757d15e0cd56376ffc3635d0ff6568f8684fb54cac0ac65c3b0d38
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"d7d83356e726f27bb7dc7129cf57fdec"'
+      sha256: dfab8acaa09fcb352fc7f1ed9bbd727c70551f23cb9c6f952da4f762e41d25d2
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -3645,29 +3669,17 @@ repos:
       sha256: c9291ae12efac0a0f246668e2a251bdae72d37ccce5450ea1fd80143413357ee
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
   - name: sqlite
     alias: sqlite_scanner
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: '"46c2d3148ced79f3757d68e758bd2b9e"'
+      sha256: 72dc78d0dc72bdbc744b03fb233812916a031f3c1ace9d8989aff1f9cf03c1d0
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.0
       etag: '"9ea84ff08a19b3087398c5bb59b8fdad"'
@@ -3692,6 +3704,12 @@ repos:
       sha256: e7ee02d97a745b26bbabf1f29418b23977a8b743aa6e31ef646a89b367edfc61
       skip: false
       rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"328f61e2690168f3a055b64f8ea458d2"'
+      sha256: 589773672f9e2f775c29f0140f29d180ad2126f37b3d39ebace0f33c1e78e3e3
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"8df284329426af7a48264e450f953358"'
@@ -3714,6 +3732,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"9eb7bb8ad9055ed0199884f533f7458b"'
       sha256: 3fcf676bc967b226aaa45b58d994deb8d6781d0831e8c0a77d49dfdc1e9c637a
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"8e08270a9b7fdc596889377b0f5dac2a"'
+      sha256: 3f71f83bd4308530ad400c9ac4604eeaad7f279d6f654c504b54f494192100bd
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -3860,29 +3884,17 @@ repos:
       sha256: 15fab6944d698b11a86d59d325592ae24c9905937d368861a4adf22c34c6aa74
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
   - name: tpcds
     alias: null
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: '"391a3fdfccc14aa92cd5fda0cc5acb45"'
+      sha256: dedfd9eb648e6dd2b21ff9cf8da794ec1e9f7fe48d7929943416a70354b4b03d
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.0
       etag: '"744c173578464734bb069154f5474c5f"'
@@ -3907,6 +3919,12 @@ repos:
       sha256: 2f40032aefbb8cae247425a54cf79ee1af05a13c5323db9cfd8c69e5b1c4c463
       skip: false
       rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"62d33294f527bb1b62cbe777ab9ff785"'
+      sha256: 22569a65416071928d7a946a6b7b74032f103ad1e6c676eaef58061ad8022fc5
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"a2a9bec7b70f2bc91394e04803899e9a"'
@@ -3929,6 +3947,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"04f8190fb3e45a47d56349092441479b"'
       sha256: 6163d88062dd1ccb7d9bbc4f7749082f9bab7233a145138d4045206e2c56a526
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"3ba2f400d8e6af425c66dcc54e05af56"'
+      sha256: c0428ef78c07474a8936232f306b84f4de5f3fce1313f4814586b799987ab908
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -4075,29 +4099,17 @@ repos:
       sha256: d4b701325de03700d4afd51ab1e29744faf4222b84b313711f4a8837f9e06d73
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
   - name: tpch
     alias: null
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: '"4554e6abdc22c4f82018e5b93bc804a9"'
+      sha256: 60c13ceaee336e763b0468a9da8898bf57c48c68d36dffa453b74e691648d0a3
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.0
       etag: '"9a0782082685431701491b7a0bd55916"'
@@ -4122,6 +4134,12 @@ repos:
       sha256: 4fcaf32737a5595d034c59067c049fc3f616b46bb091fa64ada49c410988f574
       skip: false
       rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"f312e39994a0d0c6295ba69ce8ab306b"'
+      sha256: 205912f6954d0d13d319f60cf0f63c57dafeb68b5ccf95ea1fa44744f9065d4b
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"9ccd3630501763327e37cb77c17b907e"'
@@ -4144,6 +4162,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"b6e2cdab54ac1dbc36f6ad885cc87a30"'
       sha256: 51fffaba35e9c8e16a4dbe49a616af54bf070623d44d0e707588d0d85c8d885b
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"22d12c56b011bcab751bd04faae5d340"'
+      sha256: cdfbe258dd9931402c9e7ccd336de834c26494dca7b015c047eb971df6f43739
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -4290,29 +4314,17 @@ repos:
       sha256: 6ff6ccc9730945107d1a957d583ae43f3223b8a1e280da480870e29ec37efe70
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
   - name: ui
     alias: null
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: '"f25728ea7c4e85493394475c56de8c76"'
+      sha256: 5b89f1ac71ba73141cffb28fba80477ad13e58c1cfb8cbcd68adebd540a8c075
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.0
       etag: '"a1638ad34b2978131742653fb3738e0b"'
@@ -4337,6 +4349,12 @@ repos:
       sha256: 2f9d58a6e28f969d0b27163461b143d7382cafd37848b77fe61ab3836de569c2
       skip: false
       rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"587bf59d439f645c0561864f9219aeff"'
+      sha256: 9f8fa17fcbac8ab7249def6cc15b22cbb52a5ac5814a4a77ebe7f486ac3939c4
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"af499d178678ac79eb7ed4eacb410e4f"'
@@ -4359,6 +4377,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"53a1553e1d9a1c19ec272c184fd2e761"'
       sha256: c244d194209831179eda5a9dd2d170a4934abb420e9b3a93fdbcec3afa9c3ae8
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"7f5b9159379607f1f062878c041c64cf"'
+      sha256: 55412b47cee77b05a65b4603ae6f6dc4348c173dc7483e007304520608801674
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -4505,29 +4529,17 @@ repos:
       sha256: fcbe9098616f810f77ef8f003306c61a6aaf8dd5538ed811236c61b8db488c22
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
   - name: vss
     alias: null
     author: duckdb
     license: MIT
     builds:
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.0
+      etag: '"994692e8816e1478df4b726af5f052d9"'
+      sha256: 34730b1565f8fa75c557a2f40da3731fdcc162207d1f31159b5578c909702343
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.0
       etag: '"f04fa5a5c6d193822b9e7f5081f9581d"'
@@ -4552,6 +4564,12 @@ repos:
       sha256: c10c64d311181bf398449ba9aaf3c02f8ac80422f5302de059c144bf95f8cd4c
       skip: false
       rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.1
+      etag: '"37e80f1b6a167c3af0b00f82eeb6476b"'
+      sha256: f718440d186c0d52d957ab48c8d2f8157ac918e655145fa71761d2593f4b3e02
+      skip: false
+      rebuild_with: null
     - platform: linux_arm64
       duckdb_version: 1.2.1
       etag: '"d1d9ba31651d45bc26a093f34415de91"'
@@ -4574,6 +4592,12 @@ repos:
       duckdb_version: 1.2.1
       etag: '"55f96e0470a3ded218b893810a1c6aa8"'
       sha256: 0221f97aab238a154df1add053aa5bc82e5e1e61e1056f723b6e5f3e76f66914
+      skip: false
+      rebuild_with: null
+    - platform: linux_amd64_gcc4
+      duckdb_version: 1.2.2
+      etag: '"241db0d29eb09315728260ad05e9eb4a"'
+      sha256: 750072c978dfe5c5630f3842f204ba79433739bcd05efdf927d4c14670adc23b
       skip: false
       rebuild_with: null
     - platform: linux_arm64
@@ -4720,24 +4744,6 @@ repos:
       sha256: e2686141ff406b3357ba5ae913cda71e9b5420a32d951fd5cea0b41278e562fc
       skip: false
       rebuild_with: null
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.1
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
-    - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.2
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: 20250921.post0
 - name: duckdb/community-extensions
   url: https://community-extensions.duckdb.org
   prefix: community-
