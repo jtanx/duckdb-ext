@@ -32,6 +32,10 @@ repos:
       etag: '"1949264227a80683bbdd91925f61fb68"'
       sha256: dd651e775585e15ab242bf0e3a3172f22be1130553d711dbec62ef90f9063798
       skip: false
+  - name: avro
+    author: duckdb
+    license: MIT
+    builds: []
 - name: duckdb/community-extensions
   url: https://community-extensions.duckdb.org
   prefix: community-

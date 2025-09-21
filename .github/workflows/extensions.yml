@@ -10,11 +10,17 @@ permissions:
   pull-requests: write     # needed to call the pulls REST API (create PR)
   id-token: write        # pypi publishing
 
+concurrency:
+  group: descriptor-update
+  cancel-in-progress: true
+
 jobs:
   build-extensions:
     runs-on: ubuntu-latest
     outputs:
       has-wheels: ${{ steps.build-extensions.outputs.has-wheels }}
+      pr-number: ${{ steps.create-pr.outputs.pull-request-number }}
+      descriptor-branch: chore/update-descriptor-${{ github.run_id }}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -46,6 +52,7 @@ jobs:
           path: dist
       - name: Create PR for updated descriptor
         if: steps.build-extensions.outputs.has-wheels == 'true' && github.ref == 'refs/heads/main'
+        id: create-pr
         uses: peter-evans/create-pull-request@v7
         with:
           commit-message: "chore: update descriptor.yml"
@@ -90,3 +97,32 @@ jobs:
         with:
           verbose: true
           print-hash: true
+  merge-descriptor-pr:
+    name: Merge descriptor update PR
+    runs-on: ubuntu-latest
+    needs: [publish-to-pypi, build-extensions]
+    if: needs.build-extensions.outputs.pr-number != '' && needs.publish-to-pypi.result == 'success'
+    steps:
+      - name: Merge PR
+        uses: actions/github-script@v7
+        env:
+          PR_NUMBER: ${{ needs.build-extensions.outputs.pr-number }}
+          BRANCH_NAME: ${{ needs.build-extensions.outputs.descriptor-branch }}
+        with:
+          script: |
+            const prNumber = parseInt(process.env.PR_NUMBER, 10);
+            if (!prNumber) {
+              core.info('No PR number found; skipping merge.');
+              return;
+            }
+            try {
+              await github.rest.pulls.merge({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: prNumber,
+                merge_method: 'squash'
+              });
+              core.info(`PR #${prNumber} merged successfully.`);
+            } catch (err) {
+              core.setFailed(`Failed to merge PR #${prNumber}: ${err.message}`);
+            }
