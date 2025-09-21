@@ -777,7 +777,57 @@ repos:
     alias: mysql_scanner
     author: duckdb
     license: MIT
-    builds: []
+    builds:
+    - platform: linux_amd64
+      duckdb_version: 1.3.2
+      etag: '"30f7ed902adc3662fbd12db5645490ea"'
+      sha256: 9d093f5b45860dd0cc49adea7227bb0b52fb008782ae92b4f4bec265b7a6f047
+      skip: false
+    - platform: linux_arm64
+      duckdb_version: 1.3.2
+      etag: '"90ada18abab0a043abbdacaefaf41ecf"'
+      sha256: b2beedd5db4877694b15dcc8e8943a9852653759fd4b59df56b561d77d55cf29
+      skip: false
+    - platform: osx_amd64
+      duckdb_version: 1.3.2
+      etag: '"251aaa1a3fe1f2face12a7dc6e69db98"'
+      sha256: ee7aff76bbf1c2c02e17540aadf88f2a89ffe0a717ce69c599bbf6c99a9f66da
+      skip: false
+    - platform: osx_arm64
+      duckdb_version: 1.3.2
+      etag: '"85ed2d90b9b6b74254e2b489510f5535"'
+      sha256: 6b4285ab0d48d6037e643e588872d667ff568bd78dc7cd3d3019ad241bad20ee
+      skip: false
+    - platform: windows_amd64
+      duckdb_version: 1.3.2
+      etag: '"c6b0e4ef3f54cb822e1fb49e31a55f44"'
+      sha256: 2f91a29463990fd7256cdf9deaff06c32c9bc8728b3ff328424d5a957b01f0d5
+      skip: false
+    - platform: linux_amd64
+      duckdb_version: 1.4.0
+      etag: '"91a868d5295b2e28f8bae4c54160c55b"'
+      sha256: c1833408fd79c5cbc932d7e7c7931c2ba59270e8549098b11c0fe5ffa7559a15
+      skip: false
+    - platform: linux_arm64
+      duckdb_version: 1.4.0
+      etag: '"1fa7e7f0fc34fdc9678a3e7d4d7a7a81"'
+      sha256: e239e200f44c7c0df5d2a8f745fb1ab965cefcde765dac8a83d34f1ec835629b
+      skip: false
+    - platform: osx_amd64
+      duckdb_version: 1.4.0
+      etag: '"de4a4d573c58ef64e0fac133b642390c"'
+      sha256: fd3ef4143c1ff4d50255558b31f1fde0431592426125862c52260e6dfc75da9b
+      skip: false
+    - platform: osx_arm64
+      duckdb_version: 1.4.0
+      etag: '"bc1bdbeafe40d58781fa91bed16ea6af"'
+      sha256: 9fef92cdd2ed04f6df14626a81882b0a0fb6aab6e2ae4cdd9f91437607ee6454
+      skip: false
+    - platform: windows_amd64
+      duckdb_version: 1.4.0
+      etag: '"2f883250a107829ab340ffe566d1b490"'
+      sha256: 75c989d6f08362dbffe70f0ebe5d4ba04767c5763081db748956d13b6dfe211d
+      skip: false
   - name: parquet
     alias: null
     author: duckdb
