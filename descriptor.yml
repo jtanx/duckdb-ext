@@ -64,7 +64,32 @@ repos:
   - name: aws
     author: duckdb
     license: MIT
-    builds: []
+    builds:
+    - platform: linux_amd64
+      duckdb_version: 1.4.0
+      etag: '"a2e6b599bdd568d74ce337e67e778009"'
+      sha256: 3eac3841f5b85685f4c3f44f67949d6b824fe74cee14731f17d199908163a411
+      skip: false
+    - platform: linux_arm64
+      duckdb_version: 1.4.0
+      etag: '"ffacaf01c9fdbeae6cfd19f41b2b093b"'
+      sha256: 82debc93f43538ec0e1d5d8518f4b4ca5d27ac67d3dd0b8e35526881a40413e3
+      skip: false
+    - platform: osx_amd64
+      duckdb_version: 1.4.0
+      etag: '"2cf205f8586ec9526247d3f395002cf4"'
+      sha256: 06ab1042cb1c2a011177ebb78947c423203d19d700674233e5773f7d84f7dcae
+      skip: false
+    - platform: osx_arm64
+      duckdb_version: 1.4.0
+      etag: '"eb0194d33e8ec3aecaf3a12d95dcce71"'
+      sha256: 7c74aadc6687dbfd290c0829657c14d539f5d05d39ed76aa9071dedbc96dea24
+      skip: false
+    - platform: windows_amd64
+      duckdb_version: 1.4.0
+      etag: '"e91c56fbacd14cd8cec4c2c9c83725b3"'
+      sha256: d082ff414f5b48ea94cb0e9d08443a4eae4da72b744a28a2ec6045dcf9123e0d
+      skip: false
 - name: duckdb/community-extensions
   url: https://community-extensions.duckdb.org
   prefix: community-
