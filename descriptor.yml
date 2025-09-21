@@ -774,7 +774,7 @@ repos:
       sha256: cb931864ad85b9930cef5e63d550bdacc24380ce3fbacdedc333fa2737bf8bcb
       skip: false
   - name: mysql
-    alias: null
+    alias: mysql_scanner
     author: duckdb
     license: MIT
     builds: []
