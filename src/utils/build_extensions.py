@@ -33,7 +33,7 @@ PLATFORM_MAP = {
 }
 
 
-def fetch_duckdb_releases(min_version: str = "1.2.0") -> list[str]:
+def fetch_duckdb_releases(min_version: str = "1.3.2") -> list[str]:
     releases = "https://duckdb.org/data/duckdb-releases.csv"
     with urllib.request.urlopen(releases) as response:
         data = response.read().decode("utf-8")
@@ -49,6 +49,9 @@ def check_needs_rebuild(repo: Repo, ext: Extension, build: BuildInfo) -> bool:
     if build.skip:
         print(f"    Skipping {ext.name} as marked")
         return False
+    if build.rebuild_with is not None:
+        print(f"    Forcing rebuild for {ext.name} due to rebuild_with")
+        return True
     if build.etag is None:
         print(f"    No ETag for {ext.name}, needs rebuild")
         return True
@@ -86,7 +89,7 @@ def rebuild(repo: Repo, ext: Extension, build: BuildInfo) -> Path | None:
         / "duckdb_ext"
         / "extensions"
         / build_suffix
-        / f"{ext.name}.duckdb_extension"
+        / f"{ext.alias or ext.name}.duckdb_extension"
     )
     extension_path.parent.mkdir(parents=True, exist_ok=True)
     url = get_extension_url(repo, ext, build)
@@ -116,7 +119,7 @@ def rebuild(repo: Repo, ext: Extension, build: BuildInfo) -> Path | None:
     print(f"      New ETag: {new_etag}, SHA256: {new_sha256}")
     build.etag = new_etag
 
-    if build.sha256 == new_sha256:
+    if build.sha256 == new_sha256 and build.rebuild_with is None:
         print("      SHA256 unchanged, not rebuilding")
         return None
 
@@ -131,7 +134,7 @@ def rebuild(repo: Repo, ext: Extension, build: BuildInfo) -> Path | None:
         f"DuckDB extension package for {repo.name}/{ext.name}"
     )
     pyproject["project"]["authors"] = [
-        {"name": ext.author},
+        {"name": ext.author, "email": "noreply@example.invalid"},
         {"name": "Jeremy Tan", "email": "jtanx@outlook.com"},
     ]
     pyproject["project"]["license"] = ext.license
@@ -168,6 +171,7 @@ def rebuild(repo: Repo, ext: Extension, build: BuildInfo) -> Path | None:
     fixed_wheel.rename(dest_wheel)
 
     build.sha256 = new_sha256
+    build.rebuild_with = None
     return fixed_wheel
 
 

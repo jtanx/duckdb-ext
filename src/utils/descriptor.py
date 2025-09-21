@@ -18,6 +18,7 @@ class BuildInfo:
     etag: str | None
     sha256: str | None
     skip: bool = False
+    rebuild_with: str | None = None
 
 
 @dataclass
@@ -48,8 +49,12 @@ def get_extension_url(repo: Repo, ext: Extension, build: BuildInfo) -> str:
 
 def package_version(info: BuildInfo) -> str:
     base = info.duckdb_version
-    today = dt.datetime.now(tz=dt.timezone.utc).strftime("%Y%m%d")
-    return f"{base}.{today}"
+    suffix = (
+        info.rebuild_with
+        if info.rebuild_with is not None
+        else dt.datetime.now(tz=dt.timezone.utc).strftime("%Y%m%d")
+    )
+    return f"{base}.{suffix}"
 
 
 def load_descriptor(path: str) -> Descriptor:
