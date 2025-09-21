@@ -6,11 +6,61 @@ repos:
   - name: autocomplete
     author: duckdb
     license: MIT
-    builds: []
+    builds:
+    - platform: linux_amd64
+      duckdb_version: 1.4.0
+      etag: '"467f8f1942a0673a8dc1ab8a66f65508"'
+      sha256: a67001b9eb35f073e381e70daafa8dbf03194064818d9cf30e1eef291ce6e846
+      skip: false
+    - platform: linux_arm64
+      duckdb_version: 1.4.0
+      etag: '"ece7f4caaac66e44e29c4b178553267a"'
+      sha256: 73cdf7e8c8ae802ee90d5e30722cb2d5ddedb90adb2dc4fc2572ef0e78a7eb3d
+      skip: false
+    - platform: osx_amd64
+      duckdb_version: 1.4.0
+      etag: '"12157957bceec5dcba223d3cdb85ddbc"'
+      sha256: 38755ca719e1086f6f1c407bc85890fd5ca788614598b76fbb654bee6f66ff46
+      skip: false
+    - platform: osx_arm64
+      duckdb_version: 1.4.0
+      etag: '"70c8e08e842885ed44a3c5c4c4de55fd"'
+      sha256: 9bf781d17fc100a0ef32588ea8ca6288a8df94ef9e31520f19b781fb06a2a64b
+      skip: false
+    - platform: windows_amd64
+      duckdb_version: 1.4.0
+      etag: '"1949264227a80683bbdd91925f61fb68"'
+      sha256: dd651e775585e15ab242bf0e3a3172f22be1130553d711dbec62ef90f9063798
+      skip: false
   - name: avro
     author: duckdb
     license: MIT
-    builds: []
+    builds:
+    - platform: linux_amd64
+      duckdb_version: 1.4.0
+      etag: '"cfe0bcb7e4e4bc1efd2b766f12009e4e"'
+      sha256: ae6e05ddc85c6a1d206a2bd821ab22e90c525088411e1768b92094edb266f6be
+      skip: false
+    - platform: linux_arm64
+      duckdb_version: 1.4.0
+      etag: '"19708abd1d0c6d4972933684b6d7a57d"'
+      sha256: 516ea46248ec5424c77118e0c949275e8e33189e5d3a2a4807f75b2114dd84c2
+      skip: false
+    - platform: osx_amd64
+      duckdb_version: 1.4.0
+      etag: '"02859818df64fd86734b5855b97222e8"'
+      sha256: 5f0d5b8cd3c1ffdbed65441e6bbfd012753c40e1d586224ce1d7af2ec0b53839
+      skip: false
+    - platform: osx_arm64
+      duckdb_version: 1.4.0
+      etag: '"ad9f05aa5d5e07bc26ded4c2c4a18134"'
+      sha256: 8b9edf2707998bc23baaea926514b84e147ef097dd2ab60dd8155d534fc3d90a
+      skip: false
+    - platform: windows_amd64
+      duckdb_version: 1.4.0
+      etag: '"a2136f55661d2e615aa62d38a973f327"'
+      sha256: 1fbf5c4448b1870f2646f1d12b603e5b5a74149f9e4288c151e5b0a056b96a19
+      skip: false
 - name: duckdb/community-extensions
   url: https://community-extensions.duckdb.org
   prefix: community-
