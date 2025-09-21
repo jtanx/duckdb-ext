@@ -33,7 +33,7 @@ PLATFORM_MAP = {
 }
 
 
-def fetch_duckdb_releases(min_version: str = "1.3.2") -> list[str]:
+def fetch_duckdb_releases(min_version: str = "1.2.0") -> list[str]:
     releases = "https://duckdb.org/data/duckdb-releases.csv"
     with urllib.request.urlopen(releases) as response:
         data = response.read().decode("utf-8")
