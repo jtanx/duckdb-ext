@@ -25,11 +25,12 @@ from utils.descriptor import (
 )
 
 PLATFORM_MAP = {
-    "linux_amd64": "manylinux_2_17_x86_64",
-    "linux_arm64": "manylinux_2_17_aarch64",
-    "osx_amd64": "macosx_10_9_x86_64",
-    "osx_arm64": "macosx_11_0_arm64",
-    "windows_amd64": "win_amd64",
+    "linux_amd64_gcc4": "manylinux_2_17_x86_64",
+    "linux_amd64": "manylinux_2_28_x86_64",
+    # "linux_arm64": "manylinux_2_28_aarch64",
+    # "osx_amd64": "macosx_10_9_x86_64",
+    # "osx_arm64": "macosx_11_0_arm64",
+    # "windows_amd64": "win_amd64",
 }
 
 
@@ -202,6 +203,12 @@ def process_repo(repo: Repo, duckdb_releases: list[str]) -> bool:
 
         for version in duckdb_releases:
             for platform in PLATFORM_MAP.keys():
+                if platform == "linux_amd64_gcc4" and not version.startswith("1.2."):
+                    key = BuildKey(platform, version)
+                    entry = existing_builds.get(key)
+                    if entry is not None:
+                        entry.skip = True
+                    continue
                 key = BuildKey(platform, version)
                 entry = existing_builds.get(key)
                 if entry is not None:
