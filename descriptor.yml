@@ -227,7 +227,7 @@ repos:
       duckdb_version: 1.2.0
       etag: null
       sha256: null
-      skip: true
+      skip: false
       rebuild_with: null
     - platform: linux_amd64_gcc4
       duckdb_version: 1.2.1
@@ -1415,7 +1415,7 @@ repos:
       duckdb_version: 1.3.0
       etag: null
       sha256: null
-      skip: true
+      skip: false
       rebuild_with: null
     - platform: osx_arm64
       duckdb_version: 1.3.0
@@ -1528,7 +1528,7 @@ repos:
       duckdb_version: 1.2.0
       etag: null
       sha256: null
-      skip: true
+      skip: false
       rebuild_with: 20250921.post0
     - platform: linux_arm64
       duckdb_version: 1.2.0
@@ -1702,7 +1702,7 @@ repos:
       duckdb_version: 1.3.2
       etag: null
       sha256: null
-      skip: true
+      skip: false
       rebuild_with: null
     - platform: linux_amd64
       duckdb_version: 1.4.0

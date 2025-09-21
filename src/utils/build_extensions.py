@@ -27,10 +27,10 @@ from utils.descriptor import (
 PLATFORM_MAP = {
     "linux_amd64_gcc4": "manylinux_2_17_x86_64",
     "linux_amd64": "manylinux_2_28_x86_64",
-    # "linux_arm64": "manylinux_2_28_aarch64",
-    # "osx_amd64": "macosx_10_9_x86_64",
-    # "osx_arm64": "macosx_11_0_arm64",
-    # "windows_amd64": "win_amd64",
+    "linux_arm64": "manylinux_2_28_aarch64",
+    "osx_amd64": "macosx_10_9_x86_64",
+    "osx_arm64": "macosx_11_0_arm64",
+    "windows_amd64": "win_amd64",
 }
 
 
