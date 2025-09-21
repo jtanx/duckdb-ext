@@ -148,6 +148,82 @@ repos:
       etag: '"42e24e7cd3add102232d05e6b3554fe9"'
       sha256: 7e95a2891bf4cefc2c5dbc8a09501bb460b36b3f541c10722b321404c59f975c
       skip: false
+  - name: ducklake
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: encodings
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: excel
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: fts
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: httpfs
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: iceberg
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: icu
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: inet
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: jemalloc
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: json
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: mysql
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: parquet
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: postgres
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: spatial
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: sqlite
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: tpcds
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: tpch
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: ui
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: vss
+    author: duckdb
+    license: MIT
+    builds: []
 - name: duckdb/community-extensions
   url: https://community-extensions.duckdb.org
   prefix: community-
