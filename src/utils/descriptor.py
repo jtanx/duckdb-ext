@@ -17,6 +17,7 @@ class BuildInfo:
     duckdb_version: str
     etag: str | None
     sha256: str | None
+    skip: bool = False
 
 
 @dataclass

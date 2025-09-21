@@ -2,10 +2,12 @@ import csv
 import gzip
 import hashlib
 import io
+import multiprocessing
 import shutil
 import subprocess
 import urllib.error
 import urllib.request
+from functools import partial
 from pathlib import Path
 
 import tomli
@@ -44,7 +46,11 @@ def fetch_duckdb_releases(min_version: str = "1.4.0") -> list[str]:
 
 
 def check_needs_rebuild(repo: Repo, ext: Extension, build: BuildInfo) -> bool:
+    if build.skip:
+        print(f"    Skipping {ext.name} as marked")
+        return False
     if build.etag is None:
+        print(f"    No ETag for {ext.name}, needs rebuild")
         return True
 
     url = get_extension_url(repo, ext, build)
@@ -68,7 +74,7 @@ def check_needs_rebuild(repo: Repo, ext: Extension, build: BuildInfo) -> bool:
     return False
 
 
-def try_rebuild(repo: Repo, ext: Extension, build: BuildInfo) -> Path | None:
+def rebuild(repo: Repo, ext: Extension, build: BuildInfo) -> Path | None:
     print(
         f"    Rebuilding {ext.name} for {build.platform} and DuckDB {build.duckdb_version}"
     )
@@ -86,30 +92,25 @@ def try_rebuild(repo: Repo, ext: Extension, build: BuildInfo) -> Path | None:
     url = get_extension_url(repo, ext, build)
     version = package_version(build)
 
-    try:
-        with urllib.request.urlopen(url) as response:
-            if response.status != 200:
-                print(f"      Failed to download extension: HTTP {response.status}")
-                return None
+    with urllib.request.urlopen(url) as response:
+        if response.status != 200:
+            raise RuntimeError(f"Failed to download extension: HTTP {response.status}")
 
-            new_etag = response.getheader("ETag")
-            reader = io.BufferedReader(response)
-            sha256 = hashlib.sha256()
-            with (
-                gzip.GzipFile(fileobj=reader) as gz,
-                open(extension_path, "wb") as out_file,
-            ):
-                chunk_size = 8192
-                while True:
-                    chunk = gz.read(chunk_size)
-                    if not chunk:
-                        break
-                    out_file.write(chunk)
-                    sha256.update(chunk)
-            new_sha256 = sha256.hexdigest()
-    except Exception as e:
-        print(f"      Error downloading or extracting extension: {e}")
-        return None
+        new_etag = response.getheader("ETag")
+        reader = io.BufferedReader(response)
+        sha256 = hashlib.sha256()
+        with (
+            gzip.GzipFile(fileobj=reader) as gz,
+            open(extension_path, "wb") as out_file,
+        ):
+            chunk_size = 8192
+            while True:
+                chunk = gz.read(chunk_size)
+                if not chunk:
+                    break
+                out_file.write(chunk)
+                sha256.update(chunk)
+        new_sha256 = sha256.hexdigest()
 
     print(f"      Downloaded and extracted to {extension_path}")
     print(f"      New ETag: {new_etag}, SHA256: {new_sha256}")
@@ -117,7 +118,7 @@ def try_rebuild(repo: Repo, ext: Extension, build: BuildInfo) -> Path | None:
 
     if build.sha256 == new_sha256:
         print("      SHA256 unchanged, not rebuilding")
-        return
+        return None
 
     print(f"      Rebuilding package into {build_root}")
     shutil.copy("extension_template/MANIFEST.in", build_root / "MANIFEST.in")
@@ -170,6 +171,18 @@ def try_rebuild(repo: Repo, ext: Extension, build: BuildInfo) -> Path | None:
     return fixed_wheel
 
 
+def try_rebuild(
+    repo: Repo, ext: Extension, build: BuildInfo
+) -> tuple[Path | None, BuildInfo]:
+    try:
+        path = rebuild(repo, ext, build)
+        return path, build
+    except Exception as e:
+        print(f"      Error rebuilding extension: {e}")
+        build.skip = True
+        return None, build
+
+
 def process_repo(repo: Repo, duckdb_releases: list[str]) -> bool:
     print(f"Processing repo: {repo.name}")
 
@@ -205,13 +218,19 @@ def process_repo(repo: Repo, duckdb_releases: list[str]) -> bool:
                     existing_builds[key] = entry
                     to_rebuild.append(entry)
 
-        for entry in to_rebuild:
-            wheel = try_rebuild(repo, ext, entry)
-            if wheel is not None:
+        with multiprocessing.Pool(8) as pool:
+            results = pool.map(partial(try_rebuild, repo, ext), to_rebuild)
+
+        for wheel, build in results:
+            if wheel:
                 new_ext_wheels.append(wheel)
+            key = BuildKey(build.platform, build.duckdb_version)
+            existing_builds[key] = build
 
         if new_ext_wheels:
-            ext.builds = list(existing_builds.values())
+            ext.builds = sorted(
+                existing_builds.values(), key=lambda b: (b.duckdb_version, b.platform)
+            )
             new_wheels.extend(new_ext_wheels)
 
     if new_wheels:
