@@ -224,12 +224,6 @@ repos:
     license: MIT
     builds:
     - platform: linux_amd64_gcc4
-      duckdb_version: 1.2.0
-      etag: null
-      sha256: null
-      skip: false
-      rebuild_with: null
-    - platform: linux_amd64_gcc4
       duckdb_version: 1.2.1
       etag: '"2f5380f8694cb6251b7b38c78e6e1426"'
       sha256: 8c9021fcfe3e0b57eaf02ec6abf59852bd3bf0c835d2a3feb97028d801b36aeb
