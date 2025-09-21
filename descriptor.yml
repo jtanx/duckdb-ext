@@ -90,6 +90,14 @@ repos:
       etag: '"e91c56fbacd14cd8cec4c2c9c83725b3"'
       sha256: d082ff414f5b48ea94cb0e9d08443a4eae4da72b744a28a2ec6045dcf9123e0d
       skip: false
+  - name: azure
+    author: duckdb
+    license: MIT
+    builds: []
+  - name: delta
+    author: duckdb
+    license: MIT
+    builds: []
 - name: duckdb/community-extensions
   url: https://community-extensions.duckdb.org
   prefix: community-
