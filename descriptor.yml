@@ -837,7 +837,57 @@ repos:
     alias: postgres_scanner
     author: duckdb
     license: MIT
-    builds: []
+    builds:
+    - platform: linux_amd64
+      duckdb_version: 1.3.2
+      etag: '"d6bd468653437b065302dcf5b4797a09"'
+      sha256: 8fd5e6c839f91bc1c59cb6d6f12ef1c1985ab848d898c09e3ac234266ae1fbee
+      skip: false
+    - platform: linux_arm64
+      duckdb_version: 1.3.2
+      etag: '"265bccdb99816c40ac674bd594acdb51"'
+      sha256: 0c14e06a91645ad588bdfc914d8ca3e600f5f9e6031f25a6db9fb62523ab1227
+      skip: false
+    - platform: osx_amd64
+      duckdb_version: 1.3.2
+      etag: '"4c72b593b4d1c9f888d1a133f52741f2"'
+      sha256: 68a435daea415045231f5ac381610ee7dd69f93fed19bd9d5ee0a87adf32eb8c
+      skip: false
+    - platform: osx_arm64
+      duckdb_version: 1.3.2
+      etag: '"9aa5de292c7a6ae297e57a6231bdcf4a"'
+      sha256: 92212d118966c77af50bcdf52f080f323518bad24c7ef37e95b8262e620766f0
+      skip: false
+    - platform: windows_amd64
+      duckdb_version: 1.3.2
+      etag: '"80698f4766100f165a160955c6f3da0c"'
+      sha256: f1665f2e96449697d974161af7222dfbbf2e666c4ad22cd4f8f3d5d4db46c84f
+      skip: false
+    - platform: linux_amd64
+      duckdb_version: 1.4.0
+      etag: '"bbdc24f5cb434748881cc55c0b694bde"'
+      sha256: c0d4bfa2bfd14392e3237b4b92994102c94b72eec9a4b8a7ad009a3bb422b547
+      skip: false
+    - platform: linux_arm64
+      duckdb_version: 1.4.0
+      etag: '"4faa674937eb6e7a3c9e78260fd6ecca"'
+      sha256: 7c8e7f9eabcfcce5f5f394b70e9001eb3e396ca53929ae4b5221abfa4649b029
+      skip: false
+    - platform: osx_amd64
+      duckdb_version: 1.4.0
+      etag: '"10d5bb0f99ed42e3880645459b71e403"'
+      sha256: 1c08de0af7ad50a9e9c0070e3ce4fbfd99c004691f753531c92884e4c53432d2
+      skip: false
+    - platform: osx_arm64
+      duckdb_version: 1.4.0
+      etag: '"87c5e9695793687faff2111d986b5ec8"'
+      sha256: 3edf132870d06747e5a87f2e53274e6d29130978d78e4f37a9623ee492d16a32
+      skip: false
+    - platform: windows_amd64
+      duckdb_version: 1.4.0
+      etag: '"edca722aa5e4055a14e47f40f44c83da"'
+      sha256: dae4ab9d179f71fc7e088266970d4a3ca9af9b475745f12c634a428e659da424
+      skip: false
   - name: spatial
     alias: null
     author: duckdb
