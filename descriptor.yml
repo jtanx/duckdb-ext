@@ -61,6 +61,10 @@ repos:
       etag: '"a2136f55661d2e615aa62d38a973f327"'
       sha256: 1fbf5c4448b1870f2646f1d12b603e5b5a74149f9e4288c151e5b0a056b96a19
       skip: false
+  - name: aws
+    author: duckdb
+    license: MIT
+    builds: []
 - name: duckdb/community-extensions
   url: https://community-extensions.duckdb.org
   prefix: community-
