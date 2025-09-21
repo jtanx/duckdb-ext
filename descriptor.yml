@@ -718,11 +718,6 @@ repos:
       etag: '"bcfbcbb8bcb273450e5645c4cfe18d0e"'
       sha256: 00422af7be9b3068aacffef169d89444be2f8aa6d413ca67e95a1bb93c63853e
       skip: false
-  - name: jemalloc
-    alias: null
-    author: duckdb
-    license: MIT
-    builds: []
   - name: json
     alias: null
     author: duckdb
@@ -839,7 +834,7 @@ repos:
       sha256: 320894c9c35c658ea17694888467c0c12cd6253087a1620d83fb3e1ef58f3098
       skip: false
   - name: postgres
-    alias: null
+    alias: postgres_scanner
     author: duckdb
     license: MIT
     builds: []

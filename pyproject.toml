@@ -1,6 +1,8 @@
 [project]
 name = "duckdb-ext"
-dynamic = ["version"]
+dynamic = [
+    "version",
+]
 description = "pip installable DuckDB extensions"
 authors = [
     { name = "Jeremy Tan", email = "jtanx@outlook.com" },
@@ -43,6 +45,69 @@ autocomplete = [
 avro = [
     "duckdb-ext-avro",
 ]
+aws = [
+    "duckdb-ext-aws",
+]
+azure = [
+    "duckdb-ext-azure",
+]
+delta = [
+    "duckdb-ext-delta",
+]
+ducklake = [
+    "duckdb-ext-ducklake",
+]
+encodings = [
+    "duckdb-ext-encodings",
+]
+excel = [
+    "duckdb-ext-excel",
+]
+fts = [
+    "duckdb-ext-fts",
+]
+httpfs = [
+    "duckdb-ext-httpfs",
+]
+iceberg = [
+    "duckdb-ext-iceberg",
+]
+icu = [
+    "duckdb-ext-icu",
+]
+inet = [
+    "duckdb-ext-inet",
+]
+json = [
+    "duckdb-ext-json",
+]
+mysql = [
+    "duckdb-ext-mysql",
+]
+parquet = [
+    "duckdb-ext-parquet",
+]
+postgres = [
+    "duckdb-ext-postgres",
+]
+spatial = [
+    "duckdb-ext-spatial",
+]
+sqlite = [
+    "duckdb-ext-sqlite",
+]
+tpcds = [
+    "duckdb-ext-tpcds",
+]
+tpch = [
+    "duckdb-ext-tpch",
+]
+ui = [
+    "duckdb-ext-ui",
+]
+vss = [
+    "duckdb-ext-vss",
+]
 
 [build-system]
 requires = [
@@ -58,10 +123,10 @@ packages = [
 ]
 zip-safe = false
 
-[tool.setuptools_scm]
-
 [tool.setuptools.package-dir]
 "" = "src"
+
+[tool.setuptools_scm]
 
 [tool.ruff.lint]
 select = [
