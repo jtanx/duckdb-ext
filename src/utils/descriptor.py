@@ -23,6 +23,7 @@ class BuildInfo:
 @dataclass
 class Extension:
     name: str
+    alias: str | None
     author: str
     license: str
     builds: list[BuildInfo]
@@ -42,7 +43,7 @@ class Descriptor:
 
 
 def get_extension_url(repo: Repo, ext: Extension, build: BuildInfo) -> str:
-    return f"{repo.url}/v{build.duckdb_version}/{build.platform}/{ext.name}.duckdb_extension.gz"
+    return f"{repo.url}/v{build.duckdb_version}/{build.platform}/{ext.alias or ext.name}.duckdb_extension.gz"
 
 
 def package_version(info: BuildInfo) -> str:

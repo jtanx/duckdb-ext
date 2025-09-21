@@ -4,6 +4,7 @@ repos:
   prefix: ''
   extensions:
   - name: autocomplete
+    alias: null
     author: duckdb
     license: MIT
     builds:
@@ -33,6 +34,7 @@ repos:
       sha256: dd651e775585e15ab242bf0e3a3172f22be1130553d711dbec62ef90f9063798
       skip: false
   - name: avro
+    alias: null
     author: duckdb
     license: MIT
     builds:
@@ -62,6 +64,7 @@ repos:
       sha256: 1fbf5c4448b1870f2646f1d12b603e5b5a74149f9e4288c151e5b0a056b96a19
       skip: false
   - name: aws
+    alias: null
     author: duckdb
     license: MIT
     builds:
@@ -91,6 +94,7 @@ repos:
       sha256: d082ff414f5b48ea94cb0e9d08443a4eae4da72b744a28a2ec6045dcf9123e0d
       skip: false
   - name: azure
+    alias: null
     author: duckdb
     license: MIT
     builds:
@@ -120,6 +124,7 @@ repos:
       sha256: a4ac1420974290f6bffc688cfcf5bb596eac7f439261566e134208283934f07f
       skip: false
   - name: delta
+    alias: null
     author: duckdb
     license: MIT
     builds:
@@ -149,6 +154,7 @@ repos:
       sha256: 7e95a2891bf4cefc2c5dbc8a09501bb460b36b3f541c10722b321404c59f975c
       skip: false
   - name: ducklake
+    alias: null
     author: duckdb
     license: MIT
     builds:
@@ -178,6 +184,7 @@ repos:
       sha256: 3b46b4adb54f61d87306604fed411fac3d4e93e8ab38d91de371c876d905e952
       skip: false
   - name: encodings
+    alias: null
     author: duckdb
     license: MIT
     builds:
@@ -207,6 +214,7 @@ repos:
       sha256: b2dd18e9f27f1711a125aa5e6306f6ec9d21bf3008eebacdf5c53acd3e0350b9
       skip: false
   - name: excel
+    alias: null
     author: duckdb
     license: MIT
     builds:
@@ -236,6 +244,7 @@ repos:
       sha256: 5a684879f0e7fba9012cd2dff9fde5187b03778538990a9706779594dc778b7c
       skip: false
   - name: fts
+    alias: null
     author: duckdb
     license: MIT
     builds:
@@ -265,6 +274,7 @@ repos:
       sha256: 4e4d7579433b31105293e736fb159b353ed6800981bcc137f135ea49e4238b44
       skip: false
   - name: httpfs
+    alias: null
     author: duckdb
     license: MIT
     builds:
@@ -294,6 +304,7 @@ repos:
       sha256: e95c9284c79d10872373e3ec2ebc3d42fe31f19b864d6b53fa513247fdf879c8
       skip: false
   - name: iceberg
+    alias: null
     author: duckdb
     license: MIT
     builds:
@@ -323,6 +334,7 @@ repos:
       sha256: 201c66167702e6e20946462f61f9de8f02979eaaacdadd2de915bdb7a2b237d7
       skip: false
   - name: icu
+    alias: null
     author: duckdb
     license: MIT
     builds:
@@ -352,6 +364,7 @@ repos:
       sha256: cd5a7d43dbd3449e97037a7affb149f4d6114b32784ef2d2ba7037c6166bc795
       skip: false
   - name: inet
+    alias: null
     author: duckdb
     license: MIT
     builds:
@@ -381,10 +394,12 @@ repos:
       sha256: 00422af7be9b3068aacffef169d89444be2f8aa6d413ca67e95a1bb93c63853e
       skip: false
   - name: jemalloc
+    alias: null
     author: duckdb
     license: MIT
     builds: []
   - name: json
+    alias: null
     author: duckdb
     license: MIT
     builds:
@@ -414,10 +429,12 @@ repos:
       sha256: cb931864ad85b9930cef5e63d550bdacc24380ce3fbacdedc333fa2737bf8bcb
       skip: false
   - name: mysql
+    alias: null
     author: duckdb
     license: MIT
     builds: []
   - name: parquet
+    alias: null
     author: duckdb
     license: MIT
     builds:
@@ -447,10 +464,12 @@ repos:
       sha256: 320894c9c35c658ea17694888467c0c12cd6253087a1620d83fb3e1ef58f3098
       skip: false
   - name: postgres
+    alias: null
     author: duckdb
     license: MIT
     builds: []
   - name: spatial
+    alias: null
     author: duckdb
     license: MIT
     builds:
@@ -480,10 +499,12 @@ repos:
       sha256: c9291ae12efac0a0f246668e2a251bdae72d37ccce5450ea1fd80143413357ee
       skip: false
   - name: sqlite
+    alias: sqlite_scanner
     author: duckdb
     license: MIT
     builds: []
   - name: tpcds
+    alias: null
     author: duckdb
     license: MIT
     builds:
@@ -513,6 +534,7 @@ repos:
       sha256: d4b701325de03700d4afd51ab1e29744faf4222b84b313711f4a8837f9e06d73
       skip: false
   - name: tpch
+    alias: null
     author: duckdb
     license: MIT
     builds:
@@ -542,6 +564,7 @@ repos:
       sha256: 6ff6ccc9730945107d1a957d583ae43f3223b8a1e280da480870e29ec37efe70
       skip: false
   - name: ui
+    alias: null
     author: duckdb
     license: MIT
     builds:
@@ -571,6 +594,7 @@ repos:
       sha256: fcbe9098616f810f77ef8f003306c61a6aaf8dd5538ed811236c61b8db488c22
       skip: false
   - name: vss
+    alias: null
     author: duckdb
     license: MIT
     builds:
