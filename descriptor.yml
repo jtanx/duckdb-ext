@@ -35,7 +35,32 @@ repos:
   - name: avro
     author: duckdb
     license: MIT
-    builds: []
+    builds:
+    - platform: linux_amd64
+      duckdb_version: 1.4.0
+      etag: '"cfe0bcb7e4e4bc1efd2b766f12009e4e"'
+      sha256: ae6e05ddc85c6a1d206a2bd821ab22e90c525088411e1768b92094edb266f6be
+      skip: false
+    - platform: linux_arm64
+      duckdb_version: 1.4.0
+      etag: '"19708abd1d0c6d4972933684b6d7a57d"'
+      sha256: 516ea46248ec5424c77118e0c949275e8e33189e5d3a2a4807f75b2114dd84c2
+      skip: false
+    - platform: osx_amd64
+      duckdb_version: 1.4.0
+      etag: '"02859818df64fd86734b5855b97222e8"'
+      sha256: 5f0d5b8cd3c1ffdbed65441e6bbfd012753c40e1d586224ce1d7af2ec0b53839
+      skip: false
+    - platform: osx_arm64
+      duckdb_version: 1.4.0
+      etag: '"ad9f05aa5d5e07bc26ded4c2c4a18134"'
+      sha256: 8b9edf2707998bc23baaea926514b84e147ef097dd2ab60dd8155d534fc3d90a
+      skip: false
+    - platform: windows_amd64
+      duckdb_version: 1.4.0
+      etag: '"a2136f55661d2e615aa62d38a973f327"'
+      sha256: 1fbf5c4448b1870f2646f1d12b603e5b5a74149f9e4288c151e5b0a056b96a19
+      skip: false
 - name: duckdb/community-extensions
   url: https://community-extensions.duckdb.org
   prefix: community-
