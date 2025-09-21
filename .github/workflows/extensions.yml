@@ -30,6 +30,12 @@ jobs:
           if ls dist/*.whl 1> /dev/null 2>&1; then
             echo "has-wheels=true" >> "$GITHUB_OUTPUT"
           fi
+      - name: Summarise build result
+        run: |
+          echo "Built wheels:"
+          ls -lh dist/*.whl || echo "No wheels built"
+          echo "Descriptor file:"
+          git diff descriptor.yml || echo "No changes to descriptor.yml"
       - uses: actions/upload-artifact@v4
         if: steps.build-extensions.outputs.has-wheels == 'true'
         with:

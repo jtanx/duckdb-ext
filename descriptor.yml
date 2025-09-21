@@ -7,10 +7,6 @@ repos:
     author: duckdb
     license: MIT
     builds: []
-  - name: avro
-    author: duckdb
-    license: MIT
-    builds: []
   - name: delta
     author: duckdb
     license: MIT
