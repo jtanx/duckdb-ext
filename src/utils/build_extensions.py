@@ -204,10 +204,8 @@ def process_repo(repo: Repo, duckdb_releases: list[str]) -> bool:
         for version in duckdb_releases:
             for platform in PLATFORM_MAP.keys():
                 if platform == "linux_amd64_gcc4" and not version.startswith("1.2."):
-                    key = BuildKey(platform, version)
-                    entry = existing_builds.get(key)
-                    if entry is not None:
-                        entry.skip = True
+                    continue
+                elif platform == "linux_amd64" and version.startswith("1.2."):
                     continue
                 key = BuildKey(platform, version)
                 entry = existing_builds.get(key)
