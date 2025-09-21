@@ -93,11 +93,61 @@ repos:
   - name: azure
     author: duckdb
     license: MIT
-    builds: []
+    builds:
+    - platform: linux_amd64
+      duckdb_version: 1.4.0
+      etag: '"a9cfe047e0914bdc1fd70d4cfed50c97"'
+      sha256: b4f78931fb2eac2d0b9fe4be9950de24d5838f6a2544a16d7ed98eefeadd2d59
+      skip: false
+    - platform: linux_arm64
+      duckdb_version: 1.4.0
+      etag: '"d74a727bb2330f3bbddaca57598cdcec"'
+      sha256: cf67db5a778604b08611f36c8c1575cd0af45c6b2577b569f8a1c0c090ccf677
+      skip: false
+    - platform: osx_amd64
+      duckdb_version: 1.4.0
+      etag: '"8363251d330fe82e1225ca91b19c035e"'
+      sha256: 4b33b206960dad65d6174bd34056749eb2b17a7f875db203b959ab0c6c709eb2
+      skip: false
+    - platform: osx_arm64
+      duckdb_version: 1.4.0
+      etag: '"d4192df7565f1a544f03772500f97cd8"'
+      sha256: 98c0ddd155ab939687266c48a710d7510629dbe3a5e280fea792077db2c11ebb
+      skip: false
+    - platform: windows_amd64
+      duckdb_version: 1.4.0
+      etag: '"65d730b3a01329e3c5810eff4b4dc98f"'
+      sha256: a4ac1420974290f6bffc688cfcf5bb596eac7f439261566e134208283934f07f
+      skip: false
   - name: delta
     author: duckdb
     license: MIT
-    builds: []
+    builds:
+    - platform: linux_amd64
+      duckdb_version: 1.4.0
+      etag: '"912089a83763638e48c97cfe662a2812"'
+      sha256: ffca58f59fdc91d4e70a917ca124606bce857434dd30925d71810d8790cde13a
+      skip: false
+    - platform: linux_arm64
+      duckdb_version: 1.4.0
+      etag: '"4fbd827eac88bc38335f4bde4c01fb90"'
+      sha256: cf569829f487303840005998d5872bbb81a4f5a93785f594624c88a0a58a9bee
+      skip: false
+    - platform: osx_amd64
+      duckdb_version: 1.4.0
+      etag: '"394771c6c3196fdfb42f1d6bc20c3311"'
+      sha256: e91e8d3ffcd7a3addc81a432b232904798c9b8a2635f470c32adc971f68bc06b
+      skip: false
+    - platform: osx_arm64
+      duckdb_version: 1.4.0
+      etag: '"ba11d69e3b7142e3a6098d50b3b97a5c"'
+      sha256: a25cc6f2101d5fcaf614ec26ca2fac0d60ec7b7575f1760d3a96ece1c8fff3ae
+      skip: false
+    - platform: windows_amd64
+      duckdb_version: 1.4.0
+      etag: '"42e24e7cd3add102232d05e6b3554fe9"'
+      sha256: 7e95a2891bf4cefc2c5dbc8a09501bb460b36b3f541c10722b321404c59f975c
+      skip: false
 - name: duckdb/community-extensions
   url: https://community-extensions.duckdb.org
   prefix: community-
