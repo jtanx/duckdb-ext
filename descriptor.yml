@@ -6,11 +6,27 @@ repos:
   - name: autocomplete
     author: duckdb
     license: MIT
-    builds: []
+    builds:
+    - platform: linux_amd64
+      duckdb_version: 1.4.0
+      etag: '"467f8f1942a0673a8dc1ab8a66f65508"'
+      sha256: a67001b9eb35f073e381e70daafa8dbf03194064818d9cf30e1eef291ce6e846
+    - platform: windows_amd64
+      duckdb_version: 1.4.0
+      etag: '"1949264227a80683bbdd91925f61fb68"'
+      sha256: dd651e775585e15ab242bf0e3a3172f22be1130553d711dbec62ef90f9063798
   - name: avro
     author: duckdb
     license: MIT
-    builds: []
+    builds:
+    - platform: linux_amd64
+      duckdb_version: 1.4.0
+      etag: '"cfe0bcb7e4e4bc1efd2b766f12009e4e"'
+      sha256: ae6e05ddc85c6a1d206a2bd821ab22e90c525088411e1768b92094edb266f6be
+    - platform: windows_amd64
+      duckdb_version: 1.4.0
+      etag: '"a2136f55661d2e615aa62d38a973f327"'
+      sha256: 1fbf5c4448b1870f2646f1d12b603e5b5a74149f9e4288c151e5b0a056b96a19
 - name: duckdb/community-extensions
   url: https://community-extensions.duckdb.org
   prefix: community-
