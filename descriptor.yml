@@ -11,10 +11,6 @@ repos:
     author: duckdb
     license: MIT
     builds: []
-  - name: delta
-    author: duckdb
-    license: MIT
-    builds: []
 - name: duckdb/community-extensions
   url: https://community-extensions.duckdb.org
   prefix: community-
