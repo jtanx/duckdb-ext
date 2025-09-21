@@ -9,7 +9,7 @@ This package provides pip installable DuckDB extensions.
 Change the extras to match which extensions you wish to install e.g.:
 
 ```
-pip install duckdb-ext[httpfs,delta,s3]
+pip install duckdb-ext[aws,httpfs,delta]
 ```
 
 ## Usage
