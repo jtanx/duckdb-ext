@@ -1,25 +1,28 @@
+from pathlib import Path
+
 import tomli
 import tomli_w
 
-from utils.descriptor import load_descriptor
+from utils.descriptor import load_descriptors
+
+DESCRIPTORS_ROOT = Path("descriptors")
 
 
 def update_extras() -> None:
-    descriptor = load_descriptor("descriptor.yml")
+    descriptors = load_descriptors(DESCRIPTORS_ROOT)
     with open("pyproject.toml", "rb") as fp:
         pyproject = tomli.load(fp)
 
     changed = False
     extras = pyproject["project"].setdefault("optional-dependencies", {})
-    for repo in descriptor.repos:
-        print(f"Processing repo {repo.name}")
-        for ext in repo.extensions:
-            ext_name = f"{repo.prefix}{ext.name}"
-            pkg_name = f"duckdb-ext-{ext_name}"
+    for desc in descriptors:
+        print(f"Processing descriptor {desc.repo.name}/{desc.extension.name}")
+        ext_name = f"{desc.repo.prefix}{desc.extension.name}"
+        pkg_name = f"duckdb-ext-{ext_name}"
 
-            print(f"  Extension: {ext_name} -> {pkg_name}")
-            changed = changed or (ext_name not in extras)
-            extras[ext_name] = [pkg_name]
+        print(f"  Extension: {ext_name} -> {pkg_name}")
+        changed = changed or (ext_name not in extras)
+        extras[ext_name] = [pkg_name]
 
     if not changed:
         print("No changes to extras detected")

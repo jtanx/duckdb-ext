@@ -43,8 +43,8 @@ jobs:
         run: |
           echo "Built wheels:"
           ls -lh dist/*.whl || echo "No wheels built"
-          echo "Descriptor file:"
-          git diff descriptor.yml || echo "No changes to descriptor.yml"
+          echo "Descriptor changes:"
+          git diff descriptors || echo "No changes to descriptors"
       - uses: actions/upload-artifact@v4
         if: steps.build-extensions.outputs.has-wheels == 'true'
         with:
@@ -55,14 +55,14 @@ jobs:
         id: create-pr
         uses: peter-evans/create-pull-request@v7
         with:
-          commit-message: "chore: update descriptor.yml"
-          title: "chore: update descriptor.yml"
+          commit-message: "chore: update descriptors"
+          title: "chore: update descriptors"
           body: |
-            Automated update of descriptor.yml produced by the build-extensions workflow.
+            Automated update of descriptors produced by the build-extensions workflow.
             This PR was created because new wheels were built.
           branch: chore/update-descriptor-${{ github.run_id }}
           add-paths: |
-            descriptor.yml
+            descriptors/**
           labels: automated,descriptor
           signoff: false
           delete-branch: true

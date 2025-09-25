@@ -16,13 +16,16 @@ import tomli_w
 from utils.descriptor import (
     BuildInfo,
     BuildKey,
+    Descriptor,
     Extension,
     Repo,
     get_extension_url,
-    load_descriptor,
+    load_descriptors,
     package_version,
     save_descriptor,
 )
+
+DESCRIPTORS_ROOT = Path("descriptors")
 
 PLATFORM_MAP = {
     "linux_amd64_gcc4": "manylinux_2_17_x86_64",
@@ -188,78 +191,69 @@ def try_rebuild(
         return None, build
 
 
-def process_repo(repo: Repo, duckdb_releases: list[str]) -> bool:
-    print(f"Processing repo: {repo.name}")
+def process_descriptor(desc: Descriptor, duckdb_releases: list[str]) -> bool:
+    print(f"Processing: {desc.repo.name}/{desc.extension.name}")
 
     new_wheels: list[Path] = []
-    for ext in repo.extensions:
-        print(f"  Extension: {ext.name}")
+    to_rebuild: list[BuildInfo] = []
+    existing_builds = {BuildKey(b.platform, b.duckdb_version): b for b in desc.builds}
 
-        new_ext_wheels: list[Path] = []
-        to_rebuild: list[BuildInfo] = []
-        existing_builds = {
-            BuildKey(b.platform, b.duckdb_version): b for b in ext.builds
-        }
-
-        for version in duckdb_releases:
-            for platform in PLATFORM_MAP.keys():
-                if platform == "linux_amd64_gcc4" and not version.startswith("1.2."):
-                    continue
-                elif platform == "linux_amd64" and version.startswith("1.2."):
-                    continue
-                key = BuildKey(platform, version)
-                entry = existing_builds.get(key)
-                if entry is not None:
-                    if check_needs_rebuild(repo, ext, entry):
-                        print(f"    Needs rebuild for {platform} and DuckDB {version}")
-                        to_rebuild.append(entry)
-                    else:
-                        print(f"    Up to date for {platform} and DuckDB {version}")
-                else:
-                    print(f"    Missing build for {platform} and DuckDB {version}")
-                    entry = BuildInfo(
-                        platform=platform,
-                        duckdb_version=version,
-                        etag=None,
-                        sha256=None,
-                    )
-                    check_needs_rebuild(repo, ext, entry)  # always true for new
-                    existing_builds[key] = entry
+    for version in duckdb_releases:
+        for platform in PLATFORM_MAP.keys():
+            if platform == "linux_amd64_gcc4" and not version.startswith("1.2."):
+                continue
+            elif platform == "linux_amd64" and version.startswith("1.2."):
+                continue
+            key = BuildKey(platform, version)
+            entry = existing_builds.get(key)
+            if entry is not None:
+                if check_needs_rebuild(desc.repo, desc.extension, entry):
+                    print(f"    Needs rebuild for {platform} and DuckDB {version}")
                     to_rebuild.append(entry)
+                else:
+                    print(f"    Up to date for {platform} and DuckDB {version}")
+            else:
+                print(f"    Missing build for {platform} and DuckDB {version}")
+                entry = BuildInfo(
+                    platform=platform,
+                    duckdb_version=version,
+                    etag=None,
+                    sha256=None,
+                )
+                check_needs_rebuild(
+                    desc.repo, desc.extension, entry
+                )  # always true for new
+                existing_builds[key] = entry
+                to_rebuild.append(entry)
 
-        with multiprocessing.Pool(8) as pool:
-            results = pool.map(partial(try_rebuild, repo, ext), to_rebuild)
+    with multiprocessing.Pool(8) as pool:
+        results = pool.map(partial(try_rebuild, desc.repo, desc.extension), to_rebuild)
 
-        for wheel, build in results:
-            if wheel:
-                new_ext_wheels.append(wheel)
-            key = BuildKey(build.platform, build.duckdb_version)
-            existing_builds[key] = build
-
-        if new_ext_wheels:
-            ext.builds = sorted(
-                existing_builds.values(), key=lambda b: (b.duckdb_version, b.platform)
-            )
-            new_wheels.extend(new_ext_wheels)
+    for wheel, build in results:
+        if wheel:
+            new_wheels.append(wheel)
+        key = BuildKey(build.platform, build.duckdb_version)
+        existing_builds[key] = build
 
     if new_wheels:
+        desc.builds = sorted(
+            existing_builds.values(), key=lambda b: (b.duckdb_version, b.platform)
+        )
         return True
     return False
 
 
 def main():
     print("Fetching DuckDB releases and loading descriptor...")
-    descriptor = load_descriptor("descriptor.yml")
+    descriptors = load_descriptors(DESCRIPTORS_ROOT)
     duckdb_releases = fetch_duckdb_releases()
-    changed = False
 
-    for repo in descriptor.repos:
-        repo_changed = process_repo(repo, duckdb_releases)
-        changed = changed or repo_changed
-
-    if changed:
-        print("Updating descriptor.yml with new build info")
-        save_descriptor(descriptor, "descriptor.yml")
+    for desc in descriptors:
+        if process_descriptor(desc, duckdb_releases):
+            print(
+                f"Updating {desc.repo.name}/{desc.extension.name} with new build info"
+            )
+            save_descriptor(desc, DESCRIPTORS_ROOT)
 
 
 if __name__ == "__main__":
