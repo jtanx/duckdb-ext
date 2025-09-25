@@ -1,5 +1,6 @@
 import datetime as dt
 from dataclasses import asdict
+from pathlib import Path
 
 import yaml
 from pydantic.dataclasses import dataclass
@@ -27,7 +28,6 @@ class Extension:
     alias: str | None
     author: str
     license: str
-    builds: list[BuildInfo]
 
 
 @dataclass
@@ -35,12 +35,13 @@ class Repo:
     name: str
     url: str
     prefix: str
-    extensions: list[Extension]
 
 
 @dataclass
 class Descriptor:
-    repos: list[Repo]
+    repo: Repo
+    extension: Extension
+    builds: list[BuildInfo]
 
 
 def get_extension_url(repo: Repo, ext: Extension, build: BuildInfo) -> str:
@@ -57,12 +58,28 @@ def package_version(info: BuildInfo) -> str:
     return f"{base}.{suffix}"
 
 
-def load_descriptor(path: str) -> Descriptor:
-    with open(path) as f:
-        data = yaml.safe_load(f)
+def load_descriptor(path: Path) -> Descriptor:
+    with open(path) as fp:
+        data = yaml.load(fp, Loader=yaml.CSafeLoader)
     return Descriptor(**data)  # type: ignore[missing-argument]
 
 
-def save_descriptor(descriptor: Descriptor, path: str) -> None:
-    with open(path, "w") as fp:
-        yaml.safe_dump(asdict(descriptor), fp, sort_keys=False)
+def save_descriptor(descriptor: Descriptor, path: str | Path) -> None:
+    descriptor_path = (
+        Path(path) / descriptor.repo.name / f"{descriptor.extension.name}.yml"
+    )
+    descriptor_path.parent.mkdir(parents=True, exist_ok=True)
+
+    with open(descriptor_path, "w") as fp:
+        yaml.dump(asdict(descriptor), fp, Dumper=yaml.CSafeDumper)
+
+
+def load_descriptors(path: str | Path) -> list[Descriptor]:
+    return [
+        load_descriptor(ext_file) for ext_file in sorted(Path(path).glob("**/*.yml"))
+    ]
+
+
+def save_descriptors(descriptors: list[Descriptor], path: str | Path) -> None:
+    for descriptor in descriptors:
+        save_descriptor(descriptor, path)

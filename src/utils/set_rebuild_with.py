@@ -1,27 +1,23 @@
 import argparse
 
-from utils.descriptor import load_descriptor, save_descriptor
+from utils.descriptor import load_descriptors, save_descriptors
 
 
 def set_rebuild_with(
     descriptor_path: str, platform: str, duckdb_version: str, rebuild_with: str
 ) -> None:
-    descriptor = load_descriptor(descriptor_path)
+    descriptors = load_descriptors(descriptor_path)
     changed = False
-    for repo in descriptor.repos:
-        for ext in repo.extensions:
-            for build in ext.builds:
-                if (
-                    build.platform == platform
-                    and build.duckdb_version == duckdb_version
-                ):
-                    build.rebuild_with = rebuild_with
-                    changed = True
-                    print(
-                        f"Set rebuild_with for {repo.name}/{ext.name} {platform} {duckdb_version} to {rebuild_with}"
-                    )
+    for desc in descriptors:
+        for build in desc.builds:
+            if build.platform == platform and build.duckdb_version == duckdb_version:
+                build.rebuild_with = rebuild_with
+                changed = True
+                print(
+                    f"Set rebuild_with for {desc.repo.name}/{desc.extension.name} {platform} {duckdb_version} to {rebuild_with}"
+                )
     if changed:
-        save_descriptor(descriptor, descriptor_path)
+        save_descriptors(descriptors, descriptor_path)
         print("Descriptor updated.")
     else:
         print("No matching builds found.")
@@ -32,7 +28,9 @@ if __name__ == "__main__":
         description="Set rebuild_with for builds matching platform and duckdb_version."
     )
     parser.add_argument(
-        "--descriptor", required=True, help="Path to the descriptor.yml file"
+        "--descriptor",
+        default="descriptors",
+        help="Path to the descriptor directory",
     )
     parser.add_argument("--platform", required=True, help="Platform to match")
     parser.add_argument(
