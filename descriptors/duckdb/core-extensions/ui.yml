@@ -222,7 +222,7 @@ builds:
   duckdb_version: 1.4.1
   etag: null
   sha256: null
-  skip: true
+  skip: false
   rebuild_with: null
 - platform: linux_arm64
   duckdb_version: 1.4.1
@@ -246,5 +246,5 @@ builds:
   duckdb_version: 1.4.1
   etag: null
   sha256: null
-  skip: true
+  skip: false
   rebuild_with: null
