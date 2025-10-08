@@ -71,7 +71,7 @@ def save_descriptor(descriptor: Descriptor, path: str | Path) -> None:
     descriptor_path.parent.mkdir(parents=True, exist_ok=True)
 
     with open(descriptor_path, "w") as fp:
-        yaml.dump(asdict(descriptor), fp, Dumper=yaml.CSafeDumper)
+        yaml.dump(asdict(descriptor), fp, Dumper=yaml.CSafeDumper, sort_keys=False)
 
 
 def load_descriptors(path: str | Path) -> list[Descriptor]:
