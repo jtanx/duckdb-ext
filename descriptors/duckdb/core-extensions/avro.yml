@@ -9,6 +9,36 @@ extension:
   license: MIT
 builds:
 - platform: linux_amd64_gcc4
+  duckdb_version: 1.2.0
+  etag: null
+  sha256: null
+  skip: true
+  rebuild_with: null
+- platform: linux_arm64
+  duckdb_version: 1.2.0
+  etag: null
+  sha256: null
+  skip: true
+  rebuild_with: null
+- platform: osx_amd64
+  duckdb_version: 1.2.0
+  etag: null
+  sha256: null
+  skip: true
+  rebuild_with: null
+- platform: osx_arm64
+  duckdb_version: 1.2.0
+  etag: null
+  sha256: null
+  skip: true
+  rebuild_with: null
+- platform: windows_amd64
+  duckdb_version: 1.2.0
+  etag: null
+  sha256: null
+  skip: true
+  rebuild_with: null
+- platform: linux_amd64_gcc4
   duckdb_version: 1.2.1
   etag: '"2f5380f8694cb6251b7b38c78e6e1426"'
   sha256: 8c9021fcfe3e0b57eaf02ec6abf59852bd3bf0c835d2a3feb97028d801b36aeb
@@ -186,5 +216,35 @@ builds:
   duckdb_version: 1.4.0
   etag: '"a2136f55661d2e615aa62d38a973f327"'
   sha256: 1fbf5c4448b1870f2646f1d12b603e5b5a74149f9e4288c151e5b0a056b96a19
+  skip: false
+  rebuild_with: null
+- platform: linux_amd64
+  duckdb_version: 1.4.1
+  etag: '"027fe05f3a515cb8550b64b2682aff6c-2"'
+  sha256: 605841706bd05518e3d0b22f90f2d3f30c9db6c204b40f627262e4fcc79ba7c7
+  skip: false
+  rebuild_with: null
+- platform: linux_arm64
+  duckdb_version: 1.4.1
+  etag: '"b79b499761adf476490437915bb4b1c0-2"'
+  sha256: ebb8b513bb38aea6ac999d8df8e42342198d281ad03245ee73703d0d1765a4bf
+  skip: false
+  rebuild_with: null
+- platform: osx_amd64
+  duckdb_version: 1.4.1
+  etag: '"9f7fe4b2c882b90142266110644d9a1e"'
+  sha256: b310901eecfa3ab6c0c2530a3156b061bc41b7591445112554d64d94052ff78f
+  skip: false
+  rebuild_with: null
+- platform: osx_arm64
+  duckdb_version: 1.4.1
+  etag: '"7c638f959d549a6f957b6f57738ea00e"'
+  sha256: 95a338288f60a6492906641bb71ac75b6a94646c0043908c286e53913183e2c4
+  skip: false
+  rebuild_with: null
+- platform: windows_amd64
+  duckdb_version: 1.4.1
+  etag: '"1b20dac22bf71186ce06c5c0e606272a-2"'
+  sha256: bbf4ac6c68f114a57648248629787141f4c512ced26a4120324c1d68d408c27f
   skip: false
   rebuild_with: null
