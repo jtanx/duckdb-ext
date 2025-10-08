@@ -220,8 +220,8 @@ builds:
   rebuild_with: null
 - platform: linux_amd64
   duckdb_version: 1.4.1
-  etag: null
-  sha256: null
+  etag: '"f716007890ee3b3b557fe944020c5ff8-2"'
+  sha256: 48aa359d44b5112d9eaf0d9941a27d52ed6c72e7c09e2057c56ddf233d3cd17e
   skip: false
   rebuild_with: null
 - platform: linux_arm64
@@ -244,7 +244,7 @@ builds:
   rebuild_with: null
 - platform: windows_amd64
   duckdb_version: 1.4.1
-  etag: null
-  sha256: null
+  etag: '"d97db912f8544aee47c30d673a1b31e4-2"'
+  sha256: e91ced718830bddc97e603e9d1cac1ba2c02cdb4a6aa67c8afb3c50190560a18
   skip: false
   rebuild_with: null
