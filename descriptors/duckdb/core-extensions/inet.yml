@@ -248,3 +248,33 @@ builds:
   sha256: ef9119d10689b70b9b29595803d68e45ed54bfb60868396a824d4e8eb6d76a13
   skip: false
   rebuild_with: null
+- platform: linux_amd64
+  duckdb_version: 1.4.2
+  etag: '"646222a1eec8a29c33691c1174346523-2"'
+  sha256: cfbfb137d2867eeae8a31e4f9b105915cb188906764754a44a158efcc6886b8e
+  skip: false
+  rebuild_with: null
+- platform: linux_arm64
+  duckdb_version: 1.4.2
+  etag: '"2b68b0b7d34f43a82b64aed34cd59f60"'
+  sha256: dd812c32c324253fcaae0514f2918e535aaaccc5baad2caf5a546dcacb77c190
+  skip: false
+  rebuild_with: null
+- platform: osx_amd64
+  duckdb_version: 1.4.2
+  etag: '"b23b8fbacfd0c91406d9f5a5e877c748"'
+  sha256: 39fdf32d64f9442e2b30662d7e656753a310afa2554d9cf7f0ea3f5b77315b3e
+  skip: false
+  rebuild_with: null
+- platform: osx_arm64
+  duckdb_version: 1.4.2
+  etag: '"2fc8e79cd4519d890ee98a19788d2707"'
+  sha256: 0315f8b92ffc19023cefd09df26cb3cd68ad0d613296c2aa3c45edbe72c52bcd
+  skip: false
+  rebuild_with: null
+- platform: windows_amd64
+  duckdb_version: 1.4.2
+  etag: '"9f1701dbed6b2e9426aaacaed31737d6-2"'
+  sha256: 49aede8a540fe955d7ff2e03c84adce974f365d3fe6eb2c8ea1e3754875410d7
+  skip: false
+  rebuild_with: null
