@@ -5,11 +5,10 @@ import io
 import multiprocessing
 import shutil
 import subprocess
-import urllib.error
-import urllib.request
 from functools import partial
 from pathlib import Path
 
+import requests
 import tomli
 import tomli_w
 
@@ -37,13 +36,13 @@ PLATFORM_MAP = {
 }
 
 
-def fetch_duckdb_releases(min_version: str = "1.3.2") -> list[str]:
+def fetch_duckdb_releases(min_version: str = "1.4.2") -> list[str]:
     # releases = "https://duckdb.org/data/duckdb-releases.csv"
     releases = "https://raw.githubusercontent.com/duckdb/duckdb-web/refs/heads/main/_data/past_releases.csv"
-    with urllib.request.urlopen(releases) as response:
-        data = response.read().decode("utf-8")
+    response = requests.get(releases)
+    response.raise_for_status()
 
-    reader = csv.DictReader(io.StringIO(data))
+    reader = csv.DictReader(io.StringIO(response.text))
     versions = sorted(
         row["version_number"] for row in reader if row["version_number"] >= min_version
     )
@@ -62,21 +61,18 @@ def check_needs_rebuild(repo: Repo, ext: Extension, build: BuildInfo) -> bool:
         return True
 
     url = get_extension_url(repo, ext, build)
-    req = urllib.request.Request(url, method="HEAD")
-    req.add_header("If-None-Match", build.etag)
 
     print(f"    Checking {ext.name} with {url} and ETag {build.etag}")
     try:
-        with urllib.request.urlopen(req) as response:
-            if response.status == 200:
-                new_etag = response.getheader("ETag")
-                print(f"      ETag changed from {build.etag} to {new_etag}")
-                return True
-    except urllib.error.HTTPError as e:
-        if e.code == 304:
+        response = requests.head(url, headers={"If-None-Match": build.etag})
+        if response.status_code == 200:
+            new_etag = response.headers.get("ETag")
+            print(f"      ETag changed from {build.etag} to {new_etag}")
+            return True
+        elif response.status_code == 304:
             print("      Not modified (304)")
         else:
-            print(f"      HTTP error: {e.code}")
+            print(f"      HTTP error: {response.status_code}")
     except Exception as e:
         print(f"      Error checking extension: {e}")
     return False
@@ -100,25 +96,24 @@ def rebuild(repo: Repo, ext: Extension, build: BuildInfo) -> Path | None:
     url = get_extension_url(repo, ext, build)
     version = package_version(build)
 
-    with urllib.request.urlopen(url) as response:
-        if response.status != 200:
-            raise RuntimeError(f"Failed to download extension: HTTP {response.status}")
+    response = requests.get(url, stream=True)
+    response.raise_for_status()
 
-        new_etag = response.getheader("ETag")
-        reader = io.BufferedReader(response)
-        sha256 = hashlib.sha256()
-        with (
-            gzip.GzipFile(fileobj=reader) as gz,
-            open(extension_path, "wb") as out_file,
-        ):
-            chunk_size = 8192
-            while True:
-                chunk = gz.read(chunk_size)
-                if not chunk:
-                    break
-                out_file.write(chunk)
-                sha256.update(chunk)
-        new_sha256 = sha256.hexdigest()
+    new_etag = response.headers.get("ETag")
+    sha256 = hashlib.sha256()
+    with (
+        gzip.GzipFile(fileobj=response.raw) as gz,
+        open(extension_path, "wb") as out_file,
+    ):
+        chunk_size = 8192
+        while True:
+            chunk = gz.read(chunk_size)
+            if not chunk:
+                break
+            out_file.write(chunk)
+            sha256.update(chunk)
+    response.close()
+    new_sha256 = sha256.hexdigest()
 
     print(f"      Downloaded and extracted to {extension_path}")
     print(f"      New ETag: {new_etag}, SHA256: {new_sha256}")
